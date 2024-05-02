@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<!-- Start Logo -->
+								<div class="logo">
+									<a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" alt="#"></a>
+								</div>
+								<!-- End Logo -->
+								<!-- Mobile Nav -->
+								<div class="mobile-nav"></div>
+								<!-- End Mobile Nav -->
+							</div>
+							<div class="col-lg-7 col-md-9 col-12">
+								<!-- Main Menu -->
+								<div class="main-menu">
+									<nav class="navigation">
+										<ul class="nav menu">
+											<li ><a href="{% url 'home' %}">Home </a></li>
+											<li ><a href="{% url 'products' %}">Books</a></li>
+											<li><a href="{% url 'doctors' %}">Special Books </a></li>
+											<li class="active"><a href="{% url 'about' %}">About</a></li>
+											<li><a href="{% url 'contact' %}">Contact</a></li>
+											<li>
+								<div class="get-quote" >
+									{% if user.is_authenticated %}
+									     {% if user.is_superuser %}
+									        <a href="{% url 'admin:index' %}"  class="btn" style="color: white; padding: 10px 10px 10px 10px;">Admin Panel</a><br>
+									     {% else %}
+									         <a href="{% url 'user_profile' %}" class="btn"  style="color: white; padding: 10px 10px 10px 10px;">{{ user.username }}</a><br>
+									     {% endif %}
+									{% else %}
+									   <a href="{% url 'login' %}" class="btn" style="color: white; padding: 10px 10px 10px 10px;">Login</a><br>
+									{% endif %}
+								</div>
+											</li>
+											<li>
+												<div class="col-lg-2 col-12">
+								<div class="get-quote">
+									{% if user.is_authenticated %}
+									     {% if user.is_superuser %}
+									        <a href="{% url 'logout' %}" class="btn" style="color: white; padding: 10px 10px 10px 10px;" >Signout</a>
+									     {% else %}
+
+									         <a href="{% url 'logout' %}" class="btn"  style="color: white; padding: 10px 10px 10px 10px;">Sign out</a>
+									     {% endif %}
+									{% else %}
+									   <a href="{% url 'register' %}" class="btn" style="color: white; padding: 10px 10px 10px 10px;" >Sign-up</a>
+									{% endif %}
+								</div>
+                            </div>
+											</li>
+
+										</ul>
+									</nav>
+								</div>
+								<!--/ End Main Menu -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!-- End Header Area -->
+
+<!--Content Start From Here-->
+
+{% block extra-styles %}
+<link rel="stylesheet" href="{% static 'css/about_card.css' %}">
+{% endblock %}
+
+<div class="about-us">
+  <h2 class="ourteam">Our Team</h2>
+	<div class="allcard">
+  <div class="team-member">
+    <img src="{% static 'img/favicon.png' %}" alt="Team Member 1">
+    <h3>Saif Ahmed</h3>
+    <p>Lead Developer</p>
+  </div>
+  <div class="team-member">
+    <img src="{% static 'img/favicon.png' %}" alt="Team Member 2">
+    <h3>Md. AL-Amin</h3>
+    <p>Software Engineer</p>
+  </div>
+    <div class="team-member">
+    <img src="{% static 'img/favicon.png' %}" alt="Team Member 3">
+    <h3>MD. Alamin</h3>
+    <p>UX Designer</p>
+  </div>
+</div>
+  <div class="project-description">
+    <h3>About Us</h3>
+    <p>At BookSwap Hub, we're more than just a platform; we're a community of book lovers united by our passion for literature. Our mission is to provide a seamless experience where readers can not only buy and swap books but also connect with like-minded individuals. Whether you're searching for the latest mystery thriller, an epic fantasy adventure, or a heartwarming romance, we're here to help you discover your next favorite read. With a diverse selection of titles and a user-friendly interface, BookSwap Hub is your go-to destination for literary exploration and exchange</p>
+
+    <h3>Motivation behind our work</h3>
+    <p>Our driving force at BookSwap Hub is the belief in the transformative power of books. We're motivated by the idea that every book exchanged or purchased has the potential to spark inspiration, ignite imagination, and broaden perspectives. By fostering a vibrant community of readers and providing easy access to a diverse range of literature, we aim to empower individuals to explore new worlds, learn, grow, and ultimately, make a positive impact in their lives and communities. Our work is fueled by the profound belief that books have the power to change lives for the better, one page at a time</p>
+
+    <h3>Impact on our lives</h3>
+    <p>At BookSwap Hub, we recognize the profound impact that books can have on our lives. From sparking creativity and fostering empathy to expanding knowledge and sparking personal growth, the influence of literature is far-reaching. By facilitating the exchange and discovery of books, we aim to enrich the lives of our community members by providing access to diverse perspectives, new ideas, and transformative stories. We believe that every book has the potential to leave a lasting impression, shape our thinking, and inspire positive change, and we're committed to empowering individuals to harness the power of reading to lead more fulfilling and meaningful lives.</p>
+  </div>
+</div>
+
+{% endblock %}

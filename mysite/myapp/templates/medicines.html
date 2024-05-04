@@ -71,8 +71,7 @@
 
 
 {% block extra-styles %}
-
-    <link rel="stylesheet" href="{% static 'css/medicines_card.css' %}">
+      <link rel="stylesheet" href="{% static 'css/medicines_new.css' %}">
      <link rel="stylesheet" href="{% static 'css/search.css' %}">
 {% endblock %}
 <!--Content start from here-->
@@ -87,16 +86,23 @@
     </div>
 <!--Search End Here-->
 
-    <div class="container" id="product-container">
+    <div class="doctor-profile-container">
         {% if products %}
             {% for product in products %}
-                <div class="product-card">
-                   <div class="img1"> <img src="{% static 'img/'|add:product.p_image.url %}" alt="Product Image" class="product-image"></div>
-                    <h2 class="product-title">{{ product.p_name }}</h2>
-                    <p class="product-cost"><strong>Cost:</strong> {{ product.p_cost }} tk</p>
-                    <p class="product-count"><strong>In stock:</strong> {{ product.p_count }}</p>
-                    <p class="product-description"><strong>Description</strong> {{ product.p_description }}</p>
-                    <p class="product-vendor"><strong>Vendor:</strong> {{ product.v_name }}</p>
+                <div class="doctor-card">
+                   <div class="img1">
+					   <img src="{% static 'img/'|add:product.p_image.url %}" alt="Product Image" class="product-image">
+				   </div>
+					<div class="doctor-info">
+                    <h1 class="doctor-name">{{ product.p_name }}</h1>
+                    <p class="doctor-cost"><strong>Cost:</strong> {{ product.p_cost }} tk</p>
+					</div>
+					<div class="appointment-slots">
+						<div class="appointment-slots">
+                    <strong> In stock  :  {{ product.p_count }}  </strong><br>
+                    <strong>Description :  </strong> {{ product.p_description }}<br>
+                    <strong>Genre:</strong>  {{ product.v_name }}
+						</div>
                     <div class="product-actions">
                         <form method="post" action="{% url 'add_to_cart' product.id %}">
                             {% csrf_token %}
@@ -105,10 +111,12 @@
                             <button type="submit">Add</button>
                         </form>
                     </div>
+				   </div>
                 </div>
             {% endfor %}
         {% endif %}
     </div>
+<!--	Button-->
     <div class="go-to-cart-button" style="display: flex; justify-content: center;">
 		<button style="padding: 10px 20px; margin: 5px; height: 40px; width: 120px;background-color: #1a76d1">
     <a href="{% url 'cart' %}" style="display: block; height: 100%; width: 100%; text-decoration: none; color: white; ">Go to Cart</a>

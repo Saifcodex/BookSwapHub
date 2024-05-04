@@ -1,0 +1,134 @@
+.main-container{
+    min-height: 100vh;
+}
+.doctor-profile-container {
+    display: flex;
+    padding: 30px 80px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+
+.doctor-card{
+    width: 340px;
+    min-height: 580px;
+    margin: 20px;
+    padding: 20px;
+    transition: transform 0.2s;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    text-align: justify;
+    color: #000;
+    box-shadow: 0 0 10px rgba(69, 69, 69, 0.355);
+    background-color: rgba(221, 221, 221, 0.594);
+    transition: transform 0.3s ease-in-out;
+}
+.doctor-info{
+    color: #000;
+    position: relative;
+    padding: 20px;
+    left: -20px;
+    top: -20px;
+    background-color: white;
+    width: 360px;
+    box-shadow: 0 0 10px rgba(69, 69, 69, 1);
+}
+.img1{
+    background-color: white;
+    width: 340px;
+    position: relative;
+    padding: 20px 0px;
+    left: -20px;
+    top: -20px;
+}
+
+.img1 img {
+    width: 200px; /* Adjust the width to your preference */
+    height: 200px; /* Adjust the height to your preference */
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* To create a box-type photo */
+}
+
+.doctor-name {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.doctor-specialty {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.doctor-cost {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.doctor-status {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.appointment-slots {
+    flex: 1;
+}
+
+.appointment-slots h2,
+.appointment-slots ul,
+.appointment-slots li {
+    font-size: 18px; /* Adjust the font size of appointment slots and time */
+}
+
+
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.product-actions label {
+    margin-right: 10px;
+}
+
+.product-actions input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.product-actions button {
+    background-color: #0074d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-actions button:hover {
+    background-color: #005ea6;
+}
+
+
+.go-to-cart-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.go-to-cart-button a {
+    text-decoration: none;
+    color: #0074d9;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.go-to-cart-button a:hover {
+    color: #005ea6;
+}

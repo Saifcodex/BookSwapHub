@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Adjust width for small screens */
+    margin: 20px;
+    flex: 1; /* To evenly distribute space */
+}
+
+@media screen and (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 20px); /* Adjust width for medium screens */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .product-card {
+        width: calc(100% - 20px); /* Adjust width for small screens */
+    }
+}
+
+.img1 {
+    background-color: white;
+    width: 100%;
+    position: relative;
+    padding: 20px 0px;
+    border-radius: 8px; /* To create a box-type photo */
+}
+
+.img1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* To create a box-type photo */
+}
+
+.product-title {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.product-cost,
+.product-count,
+.product-description,
+.product-vendor {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.product-actions label {
+    margin-right: 10px;
+}
+
+.product-actions input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.product-actions button {
+    background-color: #0074d9;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-actions button:hover {
+    background-color: #005ea6;
+}

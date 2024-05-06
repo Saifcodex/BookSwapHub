@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+		<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<!-- Start Logo -->
+								<div class="logo">
+									<a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" alt="#"></a>
+								</div>
+								<!-- End Logo -->
+								<!-- Mobile Nav -->
+								<div class="mobile-nav"></div>
+								<!-- End Mobile Nav -->
+							</div>
+							<div class="col-lg-7 col-md-9 col-12">
+								<!-- Main Menu -->
+								<div class="main-menu">
+									<nav class="navigation">
+										<ul class="nav menu">
+											<li ><a href="{% url 'home' %}">Home </a></li>
+											<li ><a href="{% url 'products' %}">Books</a></li>
+											<li><a href="{% url 'doctors' %}">Special Books </a></li>
+											<li><a href="{% url 'about' %}">About</a></li>
+											<li><a href="{% url 'contact' %}">Contact</a></li>
+											<li>
+								<div class="get-quote" >
+									{% if user.is_authenticated %}
+									     {% if user.is_superuser %}
+									        <a href="{% url 'admin:index' %}"  class="btn" style="color: white; padding: 10px 10px 10px 10px;">Admin Panel</a><br>
+									     {% else %}
+									         <a href="{% url 'user_profile' %}" class="btn"  style="color: white; padding: 10px 10px 10px 10px;">{{ user.username }}</a><br>
+									     {% endif %}
+									{% else %}
+									   <a href="{% url 'login' %}" class="btn" style="color: white; padding: 10px 10px 10px 10px;">Login</a><br>
+									{% endif %}
+								</div>
+											</li>
+											<li>
+												<div class="col-lg-2 col-12">
+								<div class="get-quote">
+									{% if user.is_authenticated %}
+									     {% if user.is_superuser %}
+									        <a href="{% url 'logout' %}" class="btn" style="color: white; padding: 10px 10px 10px 10px;" >Signout</a>
+									     {% else %}
+
+									         <a href="{% url 'logout' %}" class="btn"  style="color: white; padding: 10px 10px 10px 10px;">Sign out</a>
+									     {% endif %}
+									{% else %}
+									   <a href="{% url 'register' %}" class="btn" style="color: white; padding: 10px 10px 10px 10px;" >Sign-up</a>
+									{% endif %}
+								</div>
+                            </div>
+											</li>
+
+										</ul>
+									</nav>
+								</div>
+								<!--/ End Main Menu -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!-- End Header Area -->
+
+{% block extra-styles %}
+<link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
+<h1>Frequently Asked Questions</h1>
+
+<div class="faqs-container">
+  <div class="faq active">
+    <h3 class="faq-title">
+      How does BookSwap Hub work?
+    </h3>
+    <p class="faq-text">
+      BookSwap Hub is a platform where users can buy, sell, and swap books. Simply create an account, browse through our extensive catalog, and select the books you're interested in. You can then purchase them directly, offer your own books for swap, or negotiate trades with other users.
+    </p>
+    <button class="faq-toggle">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="faq">
+    <h3 class="faq-title">
+      How do I ensure the quality of the books I receive?
+    </h3>
+    <p class="faq-text">
+     We take quality seriously at BookSwap Hub. Before listing a book for sale or swap, users are encouraged to provide accurate descriptions of the book's condition. Additionally, we offer a rating and review system where users can share their experiences with specific sellers or swappers.
+    </p>
+    <button class="faq-toggle">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="faq">
+    <h3 class="faq-title">
+     How can I stay updated on new arrivals and special offers
+    </h3>
+    <p class="faq-text">
+      To stay informed about the latest additions to our catalog and exclusive promotions, be sure to subscribe to our newsletter and follow us on social media. You can also enable notifications within your account settings to receive updates directly.
+    </p>
+    <button class="faq-toggle">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="faq">
+    <h3 class="faq-title">
+      Are there any restrictions on the types of books I can list on BookSwap Hub?
+    </h3>
+    <p class="faq-text">
+      While we strive to maintain a diverse and inclusive catalog, there may be certain restrictions on the types of books that can be listed, such as illegal or prohibited content. Please review our terms of service for more information on acceptable content guidelines.
+    </p>
+    <button class="faq-toggle">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <div class="faq">
+    <h3 class="faq-title">
+     How can I contact customer support if I have a question or issue ?
+    </h3>
+    <p class="faq-text">
+      If you have any questions, concerns, or feedback, please don't hesitate to reach out to our customer support team. You can contact us via email at support@bookswaphub.com or through the messaging system within your account.
+    </p>
+    <button class="faq-toggle">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+    <div class="faq">
+    <h3 class="faq-title">
+     How can I provide feedback or report an issue with your services ?
+    </h3>
+    <p class="faq-text">
+       We value your feedback and encourage you to reach out to us through our Contact page or customer support email. Your input helps us improve our services and ensure a positive experience for all users.
+    </p>
+    <button class="faq-toggle">
+      <i class="fas fa-chevron-down"></i>
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div>
+
+<script >
+	const toggles = document.querySelectorAll('.faq-toggle');
+
+toggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    toggle.parentNode.classList.toggle('active');
+  });
+});
+
+// SOCIAL PANEL JS
+const floating_btn = document.querySelector('.floating-btn');
+const close_btn = document.querySelector('.close-btn');
+const social_panel_container = document.querySelector('.social-panel-container');
+
+floating_btn.addEventListener('click', () => {
+  social_panel_container.classList.toggle('visible')
+});
+
+close_btn.addEventListener('click', () => {
+  social_panel_container.classList.remove('visible')
+});
+</script>
+
+
+{% endblock %}
